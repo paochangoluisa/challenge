@@ -1,0 +1,30 @@
+name: Challenge
+
+on: push 
+
+jobs:
+    job1-ubuntu:
+        name: Ubuntu
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Step one
+            - run: date
+    job2-windows:
+        name: Windows
+        runs-on: windows-latest
+        steps: 
+            - name: Step one
+            - run: date
+    job3-macos:
+        name: Macos
+        runs-on: macos-latest
+        steps: 
+            - name: Step one
+            - run: date
+    job4-ubuntu:
+        needs: [job1-ubuntu, job2-windows, job3-macos]
+        name: Ubuntu
+        runs-on: ubuntu-latest
+        steps:
+            - name: Step one
+            - run: date
