@@ -4,23 +4,27 @@ on: push
 
 jobs:
     job1-ubuntu:
-        name: Ubuntu
+        name: Ubuntu job
         runs-on: ubuntu-latest
         steps: 
-            - run: date
+            - name: Step one
+              run: date
     job2-windows:
-        name: Windows
+        name: Windows job
         runs-on: windows-latest
-        steps: 
-            - run: date
+        steps:
+            - name: Step one
+              run: date
     job3-macos:
-        name: Macos
+        name: Macos job
         runs-on: macos-latest
-        steps: 
-            - run: date
+        steps:
+            - name: Step one
+              run: date
     job4-ubuntu:
         needs: [job1-ubuntu, job2-windows, job3-macos]
-        name: Ubuntu
+        name: Ubuntu job2
         runs-on: ubuntu-latest
         steps:
-            - run: date
+            - name: Step one
+              run: date
